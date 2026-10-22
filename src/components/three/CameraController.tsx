@@ -30,7 +30,7 @@ function sample(p: number) {
 export function CameraController({ mobile }: { mobile: boolean }) {
   useFrame(({ camera }, raw) => {
     const dt = Math.min(raw, 0.05);
-    const [x, y, z] = sample(experience.progress);
+    const [x = 0, y = 0, z = 6] = sample(experience.progress);
     const ease = 1 - Math.exp(-(mobile ? 2.2 : 3) * dt);
     const tx = (mobile ? x * 0.4 : x) + experience.pointer.x * 0.25;
     const ty = y + experience.pointer.y * 0.15;
