@@ -16,15 +16,15 @@ const KEYS: [number, number, number, number][] = [
 
 function sample(p: number) {
   for (let i = 1; i < KEYS.length; i++) {
-    const [p1, ...b] = KEYS[i];
-    const [p0, ...a] = KEYS[i - 1];
+    const [p1, ...b] = KEYS[i]!;
+    const [p0, ...a] = KEYS[i - 1]!;
     if (p <= p1) {
       const k = (p - p0) / (p1 - p0);
       const s = k * k * (3 - 2 * k);
-      return a.map((v, j) => v + (b[j] - v) * s);
+      return a.map((v, j) => v + (b[j]! - v) * s);
     }
   }
-  return KEYS[KEYS.length - 1].slice(1);
+  return KEYS[KEYS.length - 1]!.slice(1);
 }
 
 export function CameraController({ mobile }: { mobile: boolean }) {

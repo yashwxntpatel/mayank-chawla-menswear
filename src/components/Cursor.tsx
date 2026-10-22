@@ -26,7 +26,7 @@ export function Cursor() {
       const target = e.target as HTMLElement;
       const labelled = target.closest<HTMLElement>("[data-cursor]");
       if (labelled) {
-        setLabel(labelled.dataset.cursor ?? "");
+        setLabel(labelled.dataset['cursor'] ?? "");
         setMode("label");
       } else if (target.closest("a, button")) {
         setMode("link");
