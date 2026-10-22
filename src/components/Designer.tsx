@@ -1,10 +1,10 @@
 import portrait from "@/assets/designer.jpg";
-import horseGold from "@/assets/horse-gold.png";
+import horseBlack from "@/assets/horse-black.png";
 import { RevealText } from "./RevealText";
 
 export function Designer() {
   return (
-    <section id="designer" className="relative grid gap-12 px-5 py-[18vh] md:grid-cols-12 md:gap-6 md:px-10">
+    <section id="designer" className="relative grid gap-12 bg-ivory px-5 py-[18vh] text-ink md:grid-cols-12 md:gap-6 md:px-10">
       <figure className="relative overflow-hidden md:col-span-5" data-mask data-cursor="View">
         <img
           src={portrait}
@@ -18,19 +18,20 @@ export function Designer() {
       </figure>
       <div className="flex flex-col justify-between md:col-span-6 md:col-start-7">
         <div>
-          <p className="eyebrow text-muted-foreground" data-reveal>
-            Scene 05 — The Designer
+          <p className="eyebrow text-ink/60" data-reveal>
+            The Founder
           </p>
           <RevealText lines={["Mayank", "Chawla"]} className="display display-lg mt-8" />
         </div>
         <div className="mt-16 max-w-md space-y-6" data-speed="0.1">
-          <p className="copy" data-reveal>
-            A contemporary Indian menswear label shaped by architecture, tailoring and the discipline of detail.
+          <p className="text-[0.9375rem] font-light leading-[1.75] text-ink/75" data-reveal>
+            A New Delhi designer who believes a man should be remembered for how he carried the night. His house builds
+            couture menswear around one idea: exclusivity, worn with ease. Each piece tells its own story.
           </p>
-          <p className="copy text-muted-foreground/70" data-reveal>
-            [Designer biography — add Mayank's own words here.]
+          <p className="text-2xl font-medium tracking-tight" data-reveal>
+            “Be bold. Be different. Be you.”
           </p>
-          <img src={horseGold} alt="" width={48} height={60} loading="lazy" className="h-14 w-auto" data-reveal />
+          <img src={horseBlack} alt="" width={48} height={60} loading="lazy" className="h-14 w-auto" data-reveal />
         </div>
       </div>
     </section>

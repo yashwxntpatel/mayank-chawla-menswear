@@ -1,25 +1,30 @@
-import c1 from "@/assets/collection-1.jpg";
-import c2 from "@/assets/collection-2.jpg";
-import c3 from "@/assets/collection-3.jpg";
+const IMG = "https://img.perniaspopupshop.com/catalog/product/m/y";
+export const SITE = "https://mayankchawla.vercel.app";
+export const INSTAGRAM = "https://www.instagram.com/mayankchawla_menswear/";
 
-// Editable placeholder chapters — replace names and copy with the real line-up.
 export const collections = [
   {
-    index: "01",
-    title: "Signature",
-    line: "Long lines, quiet ivory, a collar that holds its posture.",
-    image: c1,
+    title: "Midnight Majesty",
+    line: "Deep hues. Luxe fabrics. A collection that keeps its secrets.",
+    image: `${IMG}/MYCW032601_1.jpg`,
+    href: `${SITE}/collections#midnight-majesty`,
   },
   {
-    index: "02",
-    title: "Formal",
-    line: "Midnight tailoring cut close to the frame, built for evening.",
-    image: c2,
+    title: "Eternal Heritage",
+    line: "Groom couture where lineage meets the cut of today.",
+    image: `${IMG}/MYCW032501_1.jpg`,
+    href: `${SITE}/collections#eternal-heritage`,
   },
   {
-    index: "03",
-    title: "Craft",
-    line: "Tonal threadwork and layered panels, revealed only in the light.",
-    image: c3,
+    title: "Regal Reflections",
+    line: "Royal bearing, reshaped for the contemporary man.",
+    image: `${IMG}/MYCW032508_1.jpg`,
+    href: `${SITE}/collections#regal-reflections`,
   },
 ];
+
+export const images = {
+  form: `${IMG}/MYCW032505_1.jpg`,
+  detail: `${IMG}/MYCW032601_4.jpg`,
+  details: [`${IMG}/MYCW032506_4.jpg`, `${IMG}/MYCW032511_4.jpg`, `${IMG}/MYCW032501_3.jpg`],
+};

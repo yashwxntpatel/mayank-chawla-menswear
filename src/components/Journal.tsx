@@ -3,32 +3,30 @@ import { RevealText } from "./RevealText";
 
 export function Journal() {
   return (
-    <section id="journal" className="relative px-5 py-[16vh] md:px-10">
-      <div className="mb-[8vh] flex items-end justify-between">
-        <RevealText lines={["Journal"]} className="display display-lg" />
-        <p className="eyebrow text-muted-foreground" data-reveal>
-          Scene 06
+    <section id="journal" className="relative bg-ivory px-5 py-[16vh] text-ink md:px-10">
+      <div className="mb-[8vh]">
+        <p className="eyebrow mb-6 text-ink/60" data-reveal>
+          Stories from the Atelier
         </p>
+        <RevealText lines={["Journal"]} className="display display-lg" />
       </div>
       <div className="grid gap-14 md:grid-cols-3 md:gap-6">
         {journal.map((j, i) => (
-          <a key={j.index} href="#journal" className="group block" style={{ marginTop: `${i * 8}vh` }} data-cursor="Read">
+          <a
+            key={j.title}
+            href={j.href}
+            target="_blank"
+            rel="noreferrer"
+            className="group block md:[margin-top:var(--offset)]"
+            style={{ ["--offset" as string]: `${i * 8}vh` }}
+            data-cursor="Read"
+          >
             <div className="overflow-hidden" data-mask>
-              <img
-                src={j.image}
-                alt={j.title}
-                width={1200}
-                height={1500}
-                loading="lazy"
-                className="media-film aspect-[4/5] w-full object-cover group-hover:scale-105"
-              />
+              <img src={j.image} alt={j.title} loading="lazy" className="media-film aspect-[4/5] w-full object-cover object-top group-hover:scale-105" />
             </div>
-            <div className="mt-5 flex items-baseline gap-4 border-t border-border pt-4" data-reveal>
-              <span className="eyebrow text-violet-soft">{j.index}</span>
-              <div>
-                <h3 className="text-xl font-medium uppercase tracking-tight">{j.title}</h3>
-                <p className="eyebrow mt-2 text-muted-foreground">{j.tag}</p>
-              </div>
+            <div className="mt-5 border-t border-ink/15 pt-4" data-reveal>
+              <p className="eyebrow text-ink/50">{j.tag}</p>
+              <h3 className="mt-2 text-xl font-medium uppercase tracking-tight">{j.title}</h3>
             </div>
           </a>
         ))}

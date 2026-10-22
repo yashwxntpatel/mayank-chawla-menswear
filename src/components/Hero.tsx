@@ -6,7 +6,7 @@ export function Hero({ onExplore }: { onExplore: () => void }) {
     <section id="top" className="relative flex min-h-[100svh] flex-col justify-between px-5 pb-8 pt-28 md:px-10 md:pb-10 md:pt-32">
       <div className="flex items-start justify-between">
         <p className="eyebrow text-muted-foreground" data-reveal>
-          Scene 01 — The Arrival
+          Gurugram · New Delhi
         </p>
         <p className="eyebrow hidden text-right text-muted-foreground md:block" data-reveal>
           Form. Fabric.
