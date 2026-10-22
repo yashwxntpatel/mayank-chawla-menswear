@@ -16,7 +16,7 @@ type DrapeSpec = {
 /** A pleated, twisted shell — a sculptural reading of a stand collar / drape. */
 function createDrape(spec: DrapeSpec, segments: number) {
   const geo = new THREE.PlaneGeometry(1, 1, segments, Math.round(segments / 3));
-  const pos = geo.attributes.position;
+  const pos = geo.getAttribute("position");
   for (let i = 0; i < pos.count; i++) {
     const u = pos.getX(i) + 0.5;
     const v = pos.getY(i) + 0.5;
@@ -56,7 +56,7 @@ export function FashionObject({ detail }: { detail: number }) {
   return (
     <group ref={group}>
       {LAYERS.map((l, i) => (
-        <mesh key={i} geometry={geometries[i]} rotation={l.rot} position-y={l.y}>
+        <mesh key={i} geometry={geometries[i]!} rotation={l.rot} position-y={l.y}>
           <meshPhysicalMaterial
             color={i === 1 ? "#2a2633" : "#16151b"}
             metalness={1}

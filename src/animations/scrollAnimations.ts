@@ -57,7 +57,7 @@ export function initScrollAnimations(root: HTMLElement) {
           rotate: 0,
           duration: reduced ? 0.01 : 1.4,
           ease: "expo.out",
-          delay: Number(el.dataset.delay ?? 0),
+          delay: Number(el.dataset['delay'] ?? 0),
           scrollTrigger: { trigger: el.parentElement, start: "top 88%" },
         },
       );
@@ -105,7 +105,7 @@ export function initScrollAnimations(root: HTMLElement) {
     });
 
     gsap.utils.toArray<HTMLElement>("[data-speed]").forEach((el) => {
-      const speed = Number(el.dataset.speed);
+      const speed = Number(el.dataset['speed']);
       gsap.to(el, {
         yPercent: speed * -100,
         ease: "none",
@@ -114,7 +114,7 @@ export function initScrollAnimations(root: HTMLElement) {
     });
 
     gsap.utils.toArray<HTMLElement>("[data-drift]").forEach((el) => {
-      const dir = Number(el.dataset.drift);
+      const dir = Number(el.dataset['drift']);
       gsap.fromTo(
         el,
         { xPercent: dir * 12 },

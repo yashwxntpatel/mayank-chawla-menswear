@@ -24,7 +24,7 @@ export default function Scene() {
       <fog attach="fog" args={["#050507", 7, 18]} />
       <Suspense fallback={null}>
         <Lighting />
-        <FashionObject detail={tier.detail} />
+        <group scale={tier.mobile ? 0.72 : 1}><FashionObject detail={tier.detail} /></group>
       </Suspense>
       <ParticleField count={tier.particles} />
       <CameraController mobile={tier.mobile} />
